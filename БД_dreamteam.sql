@@ -522,3 +522,80 @@ VALUES
 ('03.Січ','Нассау','29'),
 ('16.Лип','Валета','31'),
 ('25.Гру','Буенос-Айрес','29')
+
+
+USE DreamTeam
+UPDATE Країни 
+SET ЧасПольоту='24'
+WHERE Назва='Аргентина'
+
+USE DreamTeam
+UPDATE Країни 
+SET Віза='-'
+WHERE id='7'
+
+USE DreamTeam
+UPDATE Країни 
+SET ПочатокЗимовогоСезону='Січень'
+WHERE КінецьЗимовогоСезону='Лютий'
+
+USE DreamTeam
+UPDATE Свята
+SET Дата='25.12'
+WHERE Назва='День різвяних подарунків'
+
+USE DreamTeam
+UPDATE Свята
+SET Дата='31.12-1.01'
+WHERE Назва='Новий рік'
+
+USE DreamTeam
+UPDATE Свята
+SET Опис='Релігійне свято'
+WHERE id='11' OR id='12'
+
+
+delete from ЕкстреніСлужби
+where Телефон='911'
+
+update ЕкстреніСлужби
+set Телефон='911'
+where Назва='Швидка допомога'
+
+update ЕкстреніСлужби
+set Телефон='911'
+where id='8' or Країни_id='19'
+
+update ЕкстреніСлужби
+set Назва='ЄСП'
+where Телефон='911' or Телефон='112'
+
+DELETE ЕкстреніСлужби
+WHERE Назва='ЄСП' AND Телефон='112'
+
+
+USE DreamTeam
+UPDATE Курорти
+SET Країни_id='18'
+WHERE Назва='Валета'
+
+USE DreamTeam
+UPDATE Мови
+SET Назва='Англійська'
+WHERE Країна_id='19'
+
+DELETE Мови
+WHERE Назва='Іспанська'
+
+USE DreamTeam
+UPDATE Візи
+SET Ціна='125'
+WHERE Назва='Шенген'
+
+USE DreamTeam
+UPDATE Екскурсії
+SET Ціна=Ціна*2
+
+
+DELETE FROM Екскурсії
+WHERE Ціна<'50'
