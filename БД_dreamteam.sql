@@ -454,3 +454,71 @@ VALUES
 ('Нассау','Abaco Beach Resort & Boat Harbour'),
 ('Валета','Dolmen Resort Hotel & SPA'),
 ('Буенос-Айрес','Gaviotas Apart Hotel ')
+
+
+use DreamTeam
+create table Ціни
+(Ціна int not null,
+Назва_готелю nchar (300) not null,
+Дати nchar (10),
+Харчування nchar (30)
+constraint prim_ціни primary key (Назва_готелю),
+CONSTRAINT foreign_готель_ціна FOREIGN KEY (Назва_готелю)
+REFERENCES Готелі (Назва_готелю))
+
+use DreamTeam
+INSERT INTO Ціни
+VALUES
+('111','The Hills','01.окт','Bed & Breakfast'),
+('112','Qualys Hotel Royal Torino ', '08.июн','Bed & Breakfast'),
+('63','Malta Bosphorus Hotel & Spa','01.июл','Continental Breakfast'),
+('50','Dome Resort','02.окт','Continental Breakfast'),
+('125','Color Design Hotel','1.июн','Bed & Breakfast'),
+('62','Dunhill Beach Resort', '11.дек','Ultra All Inclusive'),
+('114','BreakFree Bell City ','23.фев','Bed & Breakfast'),
+('147','The Stellenbosch Hotel ','13.окт','Bed & Breakfast'),
+('215','Filitheyo Island Resort ','04.дек','Bed & Breakfast'),
+('45','Alamdini Resort Ubud ','09.июл','Half Board'),
+('37',	'Hotel Degenija','10.авг','Ultra All Inclusive'),
+('69',	'Alma do Pico ','18.июн','Continental Breakfast'),
+('1943',	'Platjador' ,'19.сен','Half Board'),
+('120','Palm Garden Hotel Barbados', '13.фев','Bed & Breakfast'),
+('64','Cayo Arena Beach Eco-Hotel','17.янв	','Half Board'),
+('68',	'Villa Havane', '03.май','Continental Breakfast'),
+('107','Holiday Inn Express & Suites - St. Petersburg - Seminole Area', '21.июл','Half Board'),
+('316','Abaco Beach Resort & Boat Harbour','03.янв','Bed & Breakfast'),
+('63','Dolmen Resort Hotel & SPA','16.июл','Continental Breakfast'),
+('183',	'Gaviotas Apart Hotel', '25.дек','Bed & Breakfast')
+
+use DreamTeam
+create table Температура
+(Дата nchar (10),
+Курорт nchar (30),
+Температура int not null
+constraint prim_температура primary key (Курорт),
+CONSTRAINT foreign_курорт_темп FOREIGN KEY (Курорт)
+REFERENCES Курорти (Назва))
+
+use DreamTeam
+INSERT INTO Температура
+VALUES
+('01.Жов','Нью-Йорк','19'),
+('08.Чер','Ріміні','28'),
+('01.Лип','Анкара','33'),
+('02.Жов','Бангкок','31'),
+('11.Чер','Канни','27'),
+('11.Гру','Нью-Делi','26'),
+('23.Лют','Канберра','36'),
+('13.Жов','Кейптаун','28'),
+('04.Гру','Мале',	'31'),
+('09.Лип','Денпасар','27'),
+('10.Сер','Загреб','28'),
+('18.Чер','Фаро','33'),
+('19.Вер','Мадрид','25'),
+('13.Лют','Бриджтаун','29'),
+('17.Січ','Пуерто кана','26'),
+('03.Тра','Гавана','32'),
+('21.Лип','Фуншал','25'),
+('03.Січ','Нассау','29'),
+('16.Лип','Валета','31'),
+('25.Гру','Буенос-Айрес','29')
